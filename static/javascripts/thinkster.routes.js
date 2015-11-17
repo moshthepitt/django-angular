@@ -28,6 +28,10 @@
       controller: 'ProfileSettingsController',
       controllerAs: 'vm',
       templateUrl: '/static/templates/profiles/settings.html'
+    }).when('/posts/:id', {
+      controller: 'SinglePostController',
+      controllerAs: 'vm',
+      templateUrl: '/static/templates/posts/post-form.html'
     }).when('/', {
       controller: 'IndexController',
       controllerAs: 'vm',

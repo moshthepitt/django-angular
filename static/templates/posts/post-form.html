@@ -1,0 +1,31 @@
+<div class="col-md-4 col-md-offset-4">
+  <div class="well post" ng-show="vm.post">
+    <div class="post__meta">
+      <a href="/+{{ vm.post.author.username }}">
+        +{{ vm.post.author.username }}
+      </a>
+    </div>
+
+    <div class="post__content" ng-hide="vm.author_owner">
+      <div>{{ vm.post.content }}</div>
+    </div>
+
+    <form role="form" class="single_post" ng-submit="vm.update()" ng-show="vm.author_owner">
+
+      <div class="form-group">
+        <label for="single_post__content">Post</label>
+        <textarea class="form-control" 
+                  id="single_post__content" 
+                  rows="3" 
+                  placeholder="ex. This is my first time posting on Not Google Plus!" 
+                  ng-model="vm.post.content">
+        </textarea>
+      </div>
+
+      <div class="form-group">
+        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="button" class="btn btn-danger pull-right" ng-click="vm.destroy()">Delete Post</button>
+      </div>
+    </form>
+  </div>
+</div>

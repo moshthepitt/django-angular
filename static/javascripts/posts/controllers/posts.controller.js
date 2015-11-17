@@ -115,5 +115,33 @@
         }
       }
     }
+
+
+    /**
+    * @name destroy
+    * @desc Destroy this post
+    * @memberOf thinkster.posts.controllers.PostsController
+    */
+    function destroy() {
+      Post.destroy(vm.post.id).then(postSuccessFn, postErrorFn);
+
+      /**
+      * @name profileSuccessFn
+      * @desc Redirect to index and display success snackbar
+      */
+      function postSuccessFn(data, status, headers, config) {
+        Snackbar.show('Your post has been deleted.');
+      }
+
+
+      /**
+      * @name profileErrorFn
+      * @desc Display error snackbar
+      */
+      function postErrorFn(data, status, headers, config) {
+        Snackbar.error(data.error);
+      }
+    }
+
   }
 })();

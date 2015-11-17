@@ -9,7 +9,12 @@
         </div>
 
         <div class="post__content">
-          {{ post.content }}
+          <div>{{ post.content }}</div>
+          <div class="post__permalink">
+            <a href="posts/{{ post.id }}" class="text-muted">
+              permalink
+            </a>
+          </div>
         </div>
       </div>
     </div>
